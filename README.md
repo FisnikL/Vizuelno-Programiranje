@@ -5,6 +5,7 @@
   
 ### CONTENT
 
-Lab Number | Tasks | Solutions
+Lab | Tasks | Solutions
 ------------ | ------------ | -------------
 LAB1 | [LAB1 TASKS](https://github.com/finki-mk/VP/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%81%D0%BA%D0%B0-%D0%B2%D0%B5%D0%B6%D0%B1%D0%B0-1) | [LAB1 SOLUTIONS](https://github.com/FisnikL/Vizuelno-Programiranje/tree/master/LAB1)
+LAB2 | [LAB2 TASKS](https://github.com/finki-mk/VP/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%81%D0%BA%D0%B0-%D0%B2%D0%B5%D0%B6%D0%B1%D0%B0-2) | [LAB2 SOLUTIONS](https://github.com/FisnikL/Vizuelno-Programiranje/tree/master/LAB2/Lab2GameOfLife)
