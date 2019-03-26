@@ -1,0 +1,6 @@
+C:\Users\FisnikL\Documents\[VP] - Vizelno Programiranje\Labs_2019\Lab12_2\Lab12_2\bin\Debug\Lab12_2.exe.config
+C:\Users\FisnikL\Documents\[VP] - Vizelno Programiranje\Labs_2019\Lab12_2\Lab12_2\bin\Debug\Lab12_2.exe
+C:\Users\FisnikL\Documents\[VP] - Vizelno Programiranje\Labs_2019\Lab12_2\Lab12_2\bin\Debug\Lab12_2.pdb
+C:\Users\FisnikL\Documents\[VP] - Vizelno Programiranje\Labs_2019\Lab12_2\Lab12_2\obj\Debug\Lab12_2.csproj.CoreCompileInputs.cache
+C:\Users\FisnikL\Documents\[VP] - Vizelno Programiranje\Labs_2019\Lab12_2\Lab12_2\obj\Debug\Lab12_2.exe
+C:\Users\FisnikL\Documents\[VP] - Vizelno Programiranje\Labs_2019\Lab12_2\Lab12_2\obj\Debug\Lab12_2.pdb
