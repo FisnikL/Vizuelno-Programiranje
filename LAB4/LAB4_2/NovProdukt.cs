@@ -69,6 +69,7 @@ namespace LAB4
             product.Ime = tbIme.Text;
             product.Kategorija = tbKategorija.Text;
             product.Cena = decimal.Parse(tbCena.Text);
+            product.Kolicina = decimal.Parse(tbKolicina.Text);
             DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -77,6 +78,25 @@ namespace LAB4
         {
             DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void textBox1_Validating_1(object sender, CancelEventArgs e)
+        {
+            decimal cena;
+            if (tbCena.Text.Trim().Length == 0)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(tbKolicina, "Внесете количина");
+            }
+            else if (!decimal.TryParse(tbKolicina.Text, out cena))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(tbKolicina, "Внесете бројка");
+            }
+            else
+            {
+                errorProvider1.SetError(tbKolicina, null);
+            }
         }
     }
 }

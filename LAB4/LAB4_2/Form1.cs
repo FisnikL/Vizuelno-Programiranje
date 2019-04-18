@@ -19,36 +19,42 @@ namespace LAB4
             p.Ime = "Месо";
             p.Kategorija = "Храна";
             p.Cena = 300;
+            p.Kolicina = 100.5m;
             lbProdukti.Items.Add(p);
 
             p = new Product();
             p.Ime = "Млеко";
             p.Kategorija = "Пијалок";
             p.Cena = 54;
+            p.Kolicina = 20;
             lbProdukti.Items.Add(p);
 
             p = new Product();
             p.Ime = "Вино";
             p.Kategorija = "Пијалок";
             p.Cena = 1300;
+            p.Kolicina = 10;
             lbProdukti.Items.Add(p);
 
             p = new Product();
             p.Ime = "Пиво";
             p.Kategorija = "Пијалок";
             p.Cena = 80;
+            p.Kolicina = 15;
             lbProdukti.Items.Add(p);
 
             p = new Product();
             p.Ime = "Шампон";
             p.Kategorija = "Хигиена";
             p.Cena = 220;
+            p.Kolicina = 18;
             lbProdukti.Items.Add(p);
 
             p = new Product();
             p.Ime = "Паста за заби";
             p.Kategorija = "Хигиена";
             p.Cena = 190;
+            p.Kolicina = 10;
             lbProdukti.Items.Add(p);
         }
 
@@ -95,16 +101,29 @@ namespace LAB4
 
         private void btnDodadiKoshnicka_Click(object sender, EventArgs e)
         {
-            if(lbProdukti.SelectedIndex != -1)
+            if (ValidateChildren())
             {
-                ProductItem pi = new ProductItem();
-                pi.Product = lbProdukti.SelectedItem as Product;
-                pi.Kolicina = nudKolicina.Value;
-                lbKoshnicka.Items.Add(pi);
-                refreshVkupno();
-                nudKolicina.Value = 1;
-                lbProdukti.SelectedIndex = -1;
+                if (nudKolicina.Value == 0)
+                {
+                    MessageBox.Show("Количината не смее да биде 0");
+                }
+                else
+                {
+                    if (lbProdukti.SelectedIndex != -1)
+                    {
+                        ProductItem pi = new ProductItem();
+                        pi.Product = lbProdukti.SelectedItem as Product;
+                        pi.Kolicina = nudKolicina.Value;
+                        lbKoshnicka.Items.Add(pi);
+                        refreshVkupno();
+                        (lbProdukti.SelectedItem as Product).Kolicina -= nudKolicina.Value;
+                        nudKolicina.Value = 1;
+                        lbProdukti.SelectedIndex = -1;
+
+                    }
+                }
             }
+            
         }
 
         private void refreshVkupno()
@@ -150,6 +169,7 @@ namespace LAB4
             if (MessageBox.Show("Дали сте сигурни дека сакате да ја испразните кошничката?",
                 "Испразни ја кошничката?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                
                 lbKoshnicka.Items.Clear();
                 refreshVkupno();
             }
@@ -157,9 +177,14 @@ namespace LAB4
 
         private void nudKolicina_Validating(object sender, CancelEventArgs e)
         {
-            if (nudKolicina.Value <= 0)
+            if(nudKolicina.Value < 0)
             {
-                errorProvider1.SetError(nudKolicina, "Количина треба да биде > 0");
+                errorProvider1.SetError(nudKolicina, "Количината треба да е >= нула");
+                e.Cancel = true;
+            }
+            else if(nudKolicina.Value > 0 && nudKolicina.Value > (lbProdukti.SelectedItem as Product).Kolicina)
+            {
+                errorProvider1.SetError(nudKolicina, "Максималната достапна количина е " + (lbProdukti.SelectedItem as Product).Kolicina);
                 e.Cancel = true;
             }
             else
@@ -172,6 +197,12 @@ namespace LAB4
         private void nudKolicina_Leave(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnDodadiKoshnicka_Validating(object sender, CancelEventArgs e)
+        {
+            
+
         }
     }
 }

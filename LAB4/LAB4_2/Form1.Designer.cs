@@ -201,6 +201,7 @@
             // 
             // btnIzbrishiProdukt
             // 
+            this.btnIzbrishiProdukt.CausesValidation = false;
             this.btnIzbrishiProdukt.Enabled = false;
             this.btnIzbrishiProdukt.Location = new System.Drawing.Point(291, 358);
             this.btnIzbrishiProdukt.Name = "btnIzbrishiProdukt";
@@ -252,6 +253,11 @@
             // 
             this.nudKolicina.Enabled = false;
             this.nudKolicina.Location = new System.Drawing.Point(436, 221);
+            this.nudKolicina.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nudKolicina.Name = "nudKolicina";
             this.nudKolicina.Size = new System.Drawing.Size(55, 20);
             this.nudKolicina.TabIndex = 14;

@@ -11,6 +11,7 @@ namespace LAB4
         public string Ime { get; set; }
         public string Kategorija { get; set; }
         public decimal Cena { get; set; }
+        public decimal Kolicina { get; set; }
 
         public override string ToString()
         {
